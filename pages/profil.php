@@ -43,7 +43,7 @@ include "../Elements/nav.php";
 			else { 
 			$infoCars = $voitures->show_cars(["id_cars" => $_SESSION['historique']]);
 			foreach ($infoCars as $infocars) :?>
-			<img src="<?= $infocars->photo;?>">
+			<img src="../../<?= $infocars->photo;?>">
 			<p>	Marque : <?= $infocars->marque;?> Model : <?= $infocars->model;?> </p>
 			<?php endforeach; } ?>
 		</div>

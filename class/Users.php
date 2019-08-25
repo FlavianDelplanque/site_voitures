@@ -121,14 +121,14 @@ class Users extends Database {
 		}
 		else {
 			$sHistorique = $_SESSION['historique'];
-			$tableauHistorique = explode(".", $sHistorique);
+			$tableauHistorique = explode(",", $sHistorique);
 			if (count($tableauHistorique)>2) {
 				array_shift($tableauHistorique);
-				$sHistorique = implode(".", $tableauHistorique);
-				$_SESSION['historique'] = $sHistorique.".".$historique;
+				$sHistorique = implode(",", $tableauHistorique);
+				$_SESSION['historique'] = $sHistorique.",".$historique;
 			}
 			else {
-				$_SESSION['historique'] = $historique.".".$sHistorique;
+				$_SESSION['historique'] = $historique.",".$sHistorique;
 			}
 		}
 	}

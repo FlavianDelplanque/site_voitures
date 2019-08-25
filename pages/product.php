@@ -4,10 +4,8 @@ include "../Elements/header.php";
 include "../Elements/nav.php";
 
 $slug =(isset($_GET['slug'])? $_GET['slug'] : false);
-// var_dump($slug);
-
 $voiture = $voitures->show_cars(['slug' => $slug]);
-/*$historique = $users->historique($voiture[0]->id);*/
+$historique = $users->historique($voiture[0]->id);
 ?>
 
   <main class="container main_product">
