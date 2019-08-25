@@ -69,7 +69,7 @@ $chemin = explode("/", $test1);
       <a href="<?php if(end($chemin)!="index.php"){echo "../"; }?>index.php"><button>Accueil</button></a>
       <?php if (isset($_SESSION['idUsers'])) {
         $infoUsers = $users->infoUsers($_SESSION['idUsers']);
-        if ($infoUsers['statue']==1) {
+        if ($infoUsers['statue']==0) {
       ?>
       <a href="<?php if(end($chemin)=="index.php"){echo "pages/"; }?>admin.php"><button>Admin</button></a>
       <?php }} ?>
