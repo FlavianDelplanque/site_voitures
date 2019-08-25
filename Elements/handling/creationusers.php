@@ -22,7 +22,7 @@ $Adresse = htmlspecialchars($_POST['adresse']);
 $Mail = htmlspecialchars($_POST['email']);
 $Password = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-if (preg_match("#^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,5}$#",$Mail)) {
+if (preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,5}$#",$Mail)) {
 	$users = new Users;
 	$emailVerif = $users->infoUsers($Mail);
 	if (!empty($emailVerif)) {
