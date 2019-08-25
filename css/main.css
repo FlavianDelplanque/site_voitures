@@ -1,0 +1,269 @@
+/* ********************************************************
+                    Elodie, footer
+            faire variables couleurs avec chartes
+******************************************************** */
+:root{
+  --darkBrown:#4a3332;
+  --caramel:#8F4509;
+  --blue:#3d5a98;
+  --darkGrey:#737373;
+  --grey:#d9d9d9;
+}
+body{
+  padding:0;
+  margin:0;
+}
+.navCat{
+  /*Elodie : la navbar concerne le header, j'ai juste placé et coloré */
+  height: 9vh;
+  width: 100%;
+  background-color:var(--darkBrown);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.categorie{
+  /* Elodie : concerne le formulaire (catégories) */
+  width: 80vh;
+  height: 6vh;
+  background-color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+}
+.main{
+  /* Elodie: Juste la taille du main pour que mes nav et footer soient bien placées */
+  width: 100%;
+  height: 82vh;
+  margin-top: 20vh!important;
+}
+.footernav{
+  /* Elodie : concerne le footer */
+  height: 9vh;
+  width: 100%;
+  background-color:var(--darkBrown);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.adress{
+  /* Elodie : concerne l'adresse sur le footer, ainsi que les icone reseaux */
+  width: 50%;
+  height: 9vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.reseau{
+  /* Elodie : taille des icones reseaux sociaux */
+  width: 5vh;
+  height: 5vh;
+}
+.position{
+  /* Elodie : concerne la position des elements du footer */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+/* ******************************************************************
+      Fin du CSS d'Elodie sur le footer, la nav et le header
+                  (juste taille et couleur)
+****************************************************************** */
+
+/* **************************************
+    Elo : commencement css galerie
+************************************** */
+form>div {
+  margin-top: 1vmax;
+}
+.input-field{
+  margin-top: 1.5vmax !important;
+}
+.main_galerie{
+  margin-top: 5vh;
+}
+.perso{
+  background-color:var(--grey);
+}
+.button{
+  background-color: var(--blue);
+}
+
+.car{
+margin-left: 10vh!important;;
+}
+
+.container.main_product{
+  width: 85% !important;
+  margin-top: 20vh;
+}
+/* **************************************
+    Elo : fin css
+************************************** */
+body{
+    padding:0;
+    margin:0;
+    background-color: #4a3332
+}
+
+.owl-item {
+    width: 100wh;
+    height: 80vh;
+    
+}
+.owl-item > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.entete{
+  background-color: #4a3332;
+  width:100%;
+  height:9vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
+  align-items: center;
+  margin-top:0;
+}
+
+p{
+  color:white;
+}
+
+.t1{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+.t2{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+.t3{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+.t4{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+.t5{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+.t6{
+  position: absolute;
+  left : 50%;
+  bottom:0%;
+  color:white;
+  font-size : 30px;
+}
+
+
+
+
+
+
+.owl-prev{
+  color:#8F4509 !important;
+  transform:scale(7);
+  position: absolute;
+  left:2%;
+  top: 50%;
+}
+
+.owl-next{
+  color:#8F4509 !important;
+  transform:scale(7);
+  position: absolute;
+  right:2%;
+  top: 50%;
+}
+
+.owl-dots{
+  display: none;
+}
+
+/* ********************************************************
+                    Flavian, page connexion
+******************************************************** */
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.divConnexion {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content {
+	display: none;
+}
+.active {
+	display: block;
+}
+.formConnexion {
+	display: flex;
+	flex-direction: column;	
+	align-items: center;
+}
+li {
+	list-style-type: none;
+}
+.inputFormulaireConnexion {
+	margin-bottom: 2vw;
+	border-top: 0px solid transparent;
+	border-left: 0px solid transparent;
+	border-right: 0px solid transparent;
+	border-bottom: 4px solid #3d5a98;
+	width: 20vw;
+}
+.boutonFormulaireConnexion {
+	margin-top: 6vh;
+	width: 10vw;
+	border-top-right-radius: 25% 50%;
+	border-bottom-right-radius: 25% 50%;
+	border-top-left-radius: 25% 50%;
+	border-bottom-left-radius: 25% 50%;
+	background-color: #8F4509;
+	height: 6vh;
+	color: white;
+}
+::-webkit-input-placeholder {
+   color: #3d5a98;
+}
+img {
+	height: 20vh !important;
+	border-radius: 50%;
+}
+
