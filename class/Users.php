@@ -92,7 +92,8 @@ class Users extends Database {
 		$wishlist = explode(",", $usersInfo);
 		foreach ($wishlist as $value) {
 			if ($value == $idVoiture) {
-				unset($wishlist[array_search($idVoiture, $wishlist)]);
+				$number = array_search($idVoiture,$wishlist);
+				unset($wishlist[$number]);
 			}
 		}
 		$wishlist = implode(",",$wishlist);
@@ -111,7 +112,7 @@ class Users extends Database {
 	public function suppressionWishlist($idVoiture) {
 		$id = $_SESSION['idUsers'];
 		$users = $this->connect();
-		$sth = $users->prepare('UPDATE users SET wishlist=0 WHERE id="'.$id.'"');
+		$sth = $users->prepare('UPDATE users SET wishlist=NULL WHERE id="'.$id.'"');
 		$sth->execute();
 	}
 
@@ -122,13 +123,24 @@ class Users extends Database {
 		else {
 			$sHistorique = $_SESSION['historique'];
 			$tableauHistorique = explode(",", $sHistorique);
-			if (count($tableauHistorique)>2) {
+			if (in_array($historique,$tableauHistorique)) {
+				$number = array_search($historique,$tableauHistorique);
+				unset($tableauHistorique[$number]);
+				if ($tableauHistorique==NULL) {
+					$_SESSION['historique'] = $historique;
+				}
+				else {
+					$sHistorique = implode(",", $tableauHistorique);
+					$_SESSION['historique'] = $sHistorique.",".$historique;	
+				}
+			}
+			else if (count($tableauHistorique)>2) {
 				array_shift($tableauHistorique);
 				$sHistorique = implode(",", $tableauHistorique);
 				$_SESSION['historique'] = $sHistorique.",".$historique;
 			}
 			else {
-				$_SESSION['historique'] = $historique.",".$sHistorique;
+				$_SESSION['historique'] = $sHistorique.",".$historique;
 			}
 		}
 	}

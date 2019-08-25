@@ -1,6 +1,7 @@
 <?php $title = "Profil";
 include "../Elements/header.php";
 include "../Elements/nav.php"; 
+
 ?>
 
 <body>
@@ -26,7 +27,10 @@ include "../Elements/nav.php";
 			<?php $infoCars = $voitures->show_cars(["id_cars" => $infoUsers['wishlist']]);
 			foreach ($infoCars as $infocars) :?>
 			<img src="../<?= $infocars->photo;?>">
-			<p>	Marque : <?= $infocars->marque;?> Model : <?= $infocars->model;?> </p>
+			<a href="product.php?slug=<?= $infocars->slug;?>"><p>	Marque : <?= $infocars->marque;?> Model : <?= $infocars->model;?> </p></a>
+			<form action="../Elements/handling/wishlisthistorique.php" method="POST">
+	      <button name="modificationWishlistSlugVoiture" value="<?= $infocars->slug ?>">Supprimer la voiture de la wishlist</button>
+			</form>
 			<?php endforeach; ?>
 				
 			<form action="../Elements/handling/wishlisthistorique.php" method="POST">
@@ -44,7 +48,7 @@ include "../Elements/nav.php";
 			$infoCars = $voitures->show_cars(["id_cars" => $_SESSION['historique']]);
 			foreach ($infoCars as $infocars) :?>
 			<img src="../../<?= $infocars->photo;?>">
-			<p>	Marque : <?= $infocars->marque;?> Model : <?= $infocars->model;?> </p>
+			<a href="product.php?slug=<?= $infocars->slug;?>"><p>	Marque : <?= $infocars->marque;?> Model : <?= $infocars->model;?> </p></a>
 			<?php endforeach; } ?>
 		</div>
 	</div>

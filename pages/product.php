@@ -2,7 +2,6 @@
 $title = 'produit';
 include "../Elements/header.php";
 include "../Elements/nav.php";
-
 $slug =(isset($_GET['slug'])? $_GET['slug'] : false);
 $voiture = $voitures->show_cars(['slug' => $slug]);
 $historique = $users->historique($voiture[0]->id);
@@ -80,7 +79,7 @@ $historique = $users->historique($voiture[0]->id);
     <form action="../Elements/handling/wishlisthistorique.php" method="POST">
     <?php
     $wishlist = explode(",", $infoUsers['wishlist']);
-    $verifWishlist = array_search($voiture[0]->id, $wishlist);
+    $verifWishlist = in_array($voiture[0]->id, $wishlist);
     if ($verifWishlist==0) :?>
       <button name="ajoutWishlistIdVoiture" value="<?= $voiture[0]->id ?>">Ajouter la voiture a la wishlist</button>
     <?php else :?>
