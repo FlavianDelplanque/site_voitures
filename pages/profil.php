@@ -1,8 +1,7 @@
 <?php $title = "Profil";
 include "../Elements/header.php";
 include "../Elements/nav.php"; 
-
-?>
+if (isset($_SESSION['idUsers'])) { ?>
 
 <body>
 	<div class="row">
@@ -55,5 +54,6 @@ include "../Elements/nav.php";
 
 </body>
 
+<?php } else { header("Location:connexion.php"); } ?>
 
 <?php include "../Elements/footer.php"?>
