@@ -1,6 +1,10 @@
 <?php $title = "Admin";
 require_once '../Elements/header.php'; 
-require_once '../Elements/nav.php'?>
+require_once '../Elements/nav.php';
+
+
+if (isset($infoUsers)&&$infoUsers['statue']==0) {
+?>
 
 <div class="row">
 
@@ -184,5 +188,7 @@ require_once '../Elements/nav.php'?>
         });
     })();
 </script>
+
+<?php } else { header("Location:connexion.php"); } ?>
 
 <?php require_once '../Elements/footer.php' ?>
